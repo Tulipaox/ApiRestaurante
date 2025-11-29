@@ -6,3 +6,4 @@ const tablesController = new  TablesController()
 
 
 tableRouters.get("/", tablesController.index)
+tableRouters.get("/:id", tablesController.findById)

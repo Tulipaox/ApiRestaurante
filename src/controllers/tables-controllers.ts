@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express"
 import { db } from "@/database/knex"
 
-
 export class TablesController {
     async index(request: Request, response: Response, next: NextFunction){
         try {
@@ -12,4 +11,20 @@ export class TablesController {
             next(error)
         }
     }
+    
+
+    async findById(request: Request, response: Response, next: NextFunction){
+        try {
+            const { table_id } = request.params
+            const table = await db<TableRepository>("table")
+            .select()
+            .where(+table_id).first()
+
+            return response.json(table)
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    
 }
