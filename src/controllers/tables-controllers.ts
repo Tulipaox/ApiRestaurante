@@ -11,7 +11,6 @@ export class TablesController {
             next(error)
         }
     }
-    
 
     async findById(request: Request, response: Response, next: NextFunction){
         try {
@@ -25,6 +24,4 @@ export class TablesController {
             next(error)
         }
     }
-
-    
 }
