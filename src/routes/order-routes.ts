@@ -5,4 +5,4 @@ export const orderRoutes = Router()
 const orderController = new OrderController()
 
 orderRoutes.post("/:productID/:tableSessionId", orderController.create)
-orderRoutes.get("/table-session/:id", orderController.index)
+orderRoutes.get("/table-session/:tableSessionId", orderController.index)
